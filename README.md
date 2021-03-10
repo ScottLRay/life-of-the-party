@@ -18,7 +18,7 @@ so that i can have a good time laughing and drinking
 
 ## Wireframe
 
-![the wireframe for the project]
+![the wireframe for the project](https://github.com/ScottLRay/life-of-the-party/blob/main/assest/img/Cocktail%20Gen.jpg)
 
 
 
