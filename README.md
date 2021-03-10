@@ -1,5 +1,11 @@
 # life-of-the-party
 
+
+## Used Tech
+Jquery
+Api's
+
+
 ## TITLE
 
 life of the party
