@@ -18,7 +18,7 @@ so that i can have a good time laughing and drinking
 
 ## Wireframe
 
-
+![the wireframe for the project]
 
 
 
