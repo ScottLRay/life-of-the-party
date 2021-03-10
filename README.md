@@ -1,10 +1,16 @@
 # life-of-the-party
 
+
+## Used Tech
+Jquery
+Api's
+
+
 ## TITLE
 
 life of the party
 
-project description
+## project description
 
 have a cocktail and read a random list of dad jokes
 
@@ -23,6 +29,8 @@ so that i can have a good time laughing and drinking
 
 
 ## Apis being used
-
+## dad jokes database
 https://icanhazdadjoke.com/api
+
+## cocktails database
 https://www.thecocktaildb.com/api.php
