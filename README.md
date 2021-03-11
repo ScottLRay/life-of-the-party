@@ -3,7 +3,10 @@
 
 ## Used Tech
 Jquery
+
 Api's
+
+bulma css framework
 
 
 ## TITLE
