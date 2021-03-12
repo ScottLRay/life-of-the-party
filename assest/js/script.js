@@ -75,7 +75,3 @@ function getJokes(joke) {
   });
 }
 
-randomjokes();
-// Variable for each piece of data
-// Create elements for
-// Append styles to .joke-content
