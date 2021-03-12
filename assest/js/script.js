@@ -7,6 +7,15 @@
 // declare variable
 
 function getCocktail() {
+
+    var endpoint = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
+    fetch(endpoint)
+        .then((data) => data.json())
+        .then((data) => displayCocktail(data));
+}
+
+function displayCocktail(drink) {
+
   var endpoint = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
   fetch(endpoint)
     .then((data) => data.json())
@@ -27,19 +36,29 @@ function displayCocktail(drink) {
   console.log(drink);
 }
   function displayCocktail(drink){
+
     var drinks = document.querySelector(".ct-content");
     //set variables for each piece of the data you want
     // create some elements(ex. p tag)
     //append these elemtns to ct-content
-      drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink;
-    
-      var categoryEl = document.createElement("div")
+    drinks.textContent = "Try this drink:" + drink.drinks[0].strDrink;
 
-      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3> <h4>Glass Type:${drink.drinks[0].strGlass}<h4>`
-      categoryEl.innerHTML = htmlStr;
+    var categoryEl = document.createElement("div")
+
+    htmlStr = `<h3><strong>Drink Category:</strong>${drink.drinks[0].strCategory}</h3> <h4><strong>Glass Type:</strong>${drink.drinks[0].strGlass}<h4>`
+    categoryEl.innerHTML = htmlStr;
 
     drinks.append(categoryEl);
 
+var newDrink = document.querySelector("#new-drink");
+newDrink.addEventListener("click", (e) =>{
+    e.preventDefault()
+    getCocktail();
+}
+)
+    
+    
+    
 
 getCocktail();
 
@@ -75,14 +94,18 @@ function getJokes(joke) {
     e.preventDefault
     randomjokes()
 
+
   })
   
   var saveJBtn = document.querySelector(".joke-button");
 
+
   saveJBtn.addEventListener("click", function (e) {
+
 
     e.preventDefault();
     console.log("it works");
+
 
     localStorage.setItem("jokes", jokeText);
   });
