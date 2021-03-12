@@ -21,12 +21,44 @@ function getCocktail() {
     //append these elemtns to ct-content
       drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink;
     
-      var categoryEl = document.createElement("div")
-
-      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3> <h4>Glass Type:${drink.drinks[0].strGlass}<h4>`
+      var categoryEl = document.createElement("div");
+      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3><h4>Glass Type:${drink.drinks[0].strGlass}<h4>`;
       categoryEl.innerHTML = htmlStr;
 
+      // need to put for in loop here
+      var drinksIngredientArray = [{
+        a: drink.drinks[0].strIngredient1,
+        b: drink.drinks[0].strIngredient2,
+        c: drink.drinks[0].strIngredient3,
+        d: drink.drinks[0].strIngredient4,
+        e: drink.drinks[0].strIngredient5,
+        f: drink.drinks[0].strIngredient6,
+        g: drink.drinks[0].strIngredient7,
+        h: drink.drinks[0].strIngredient8,
+        i: drink.drinks[0].strIngredient9,
+        j: drink.drinks[0].strIngredient10,
+        k: drink.drinks[0].strIngredient11,
+        l: drink.drinks[0].strIngredient12,
+        m: drink.drinks[0].strIngredient13,
+        n: drink.drinks[0].strIngredient14,
+        o: drink.drinks[0].strIngredient15,
+      }];
+      var drinksIngredientObject = drinksIngredientArray[0];
+      console.log(drinksIngredientObject);
+
+      for (var key in drinksIngredientObject){
+        if (drinksIngredientObject[key]=== !null);
+        console.log(drinksIngredientObject);
+      };
+
+      var category2El = document.createElement("div");
+      htmlStr2 = `<p>Instructions: ${drink.drinks[0].strInstructions}</p>`;
+      category2El.innerHTML =htmlStr2;
+
+      
+
     drinks.append(categoryEl);
+    drinks.append(category2El);
 
 
     
