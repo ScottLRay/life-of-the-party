@@ -7,14 +7,19 @@ function randomjokes() {
         .then(function (joke) {
             var jokes = document.querySelector(".joke-content")
             if (joke.joke) {
-                jokes.textContent = "Random joke: " + joke.joke;
+                jokes.textContent = joke.joke;
                 console.log(joke);
             } else {
-                jokes.textContent = "Random joke: " + joke.setup + joke.delivery;
+                jokes.textContent = joke.setup + joke.delivery;
             }
+                jokes.setAttribute("style", "line-height: 2rem; font-weight: bold;")
 
         });
 
 }
 
 randomjokes();
+// Variable for each piece of data 
+// Create elements for
+// Append styles to .joke-content  
+
