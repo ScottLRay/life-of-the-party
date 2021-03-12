@@ -11,32 +11,30 @@
 function getCocktail() {
     var endpoint = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
     fetch(endpoint)
-      .then((data) => data.json())
-      .then((data) => displayCocktail(data));
-  }
+        .then((data) => data.json())
+        .then((data) => displayCocktail(data));
+}
 
-  function displayCocktail(drink){
+function displayCocktail(drink) {
     var drinks = document.querySelector(".ct-content");
     //set variables for each piece of the data you want
     // create some elements(ex. p tag)
     //append these elemtns to ct-content
-      drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink;
-    
-      var categoryEl = document.createElement("div")
+    drinks.textContent = "Try this drink:" + drink.drinks[0].strDrink;
 
-      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3> <h4>Glass Type:${drink.drinks[0].strGlass}<h4>`
-      categoryEl.innerHTML = htmlStr;
+    var categoryEl = document.createElement("div")
+
+    htmlStr = `<h3><strong>Drink Category:</strong>${drink.drinks[0].strCategory}</h3> <h4><strong>Glass Type:</strong>${drink.drinks[0].strGlass}<h4>`
+    categoryEl.innerHTML = htmlStr;
 
     drinks.append(categoryEl);
 
 
-    
+
     console.log(drink)
-  }
+}
 
-  getCocktail();
-
- 
+getCocktail();
 
 
 function randomjokes() {
@@ -51,14 +49,27 @@ function randomjokes() {
             } else {
                 jokes.textContent = joke.setup + joke.delivery;
             }
-                jokes.setAttribute("style", "line-height: 2rem; font-weight: bold;")
+            jokes.setAttribute("style", "line-height: 2rem;")
 
         });
 
 }
 
 randomjokes();
-// Variable for each piece of data 
-// Create elements for
-// Append styles to .joke-content  
 
+
+// var newJoke = document.getElementById("#new-joke");
+// newJoke.addEventListener("click", randomjokes());
+var newJoke = document.querySelector("#new-joke");
+newJoke.addEventListener("click", (e) =>{
+    e.preventDefault()
+    randomjokes();
+}
+)
+
+var newDrink = document.querySelector("#new-drink");
+newDrink.addEventListener("click", (e) =>{
+    e.preventDefault()
+    getCocktail();
+}
+)
