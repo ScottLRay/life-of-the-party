@@ -19,7 +19,16 @@ function getCocktail() {
     //set variables for each piece of the data you want
     // create some elements(ex. p tag)
     //append these elemtns to ct-content
-      drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink + drink.drinks[0].strCategory + drink.drinks[0].strDrinkThumb;
+      drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink;
+    
+      var categoryEl = document.createElement("div")
+
+      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3> <h4>Glass Type:${drink.drinks[0].strGlass}<h4>`
+      categoryEl.innerHTML = htmlStr;
+
+    drinks.append(categoryEl);
+
+
     
     console.log(drink)
   }
