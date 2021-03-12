@@ -26,6 +26,20 @@ function displayCocktail(drink) {
 
   console.log(drink);
 }
+  function displayCocktail(drink){
+    var drinks = document.querySelector(".ct-content");
+    //set variables for each piece of the data you want
+    // create some elements(ex. p tag)
+    //append these elemtns to ct-content
+      drinks.textContent = "Try this drink: "+ drink.drinks[0].strDrink;
+    
+      var categoryEl = document.createElement("div")
+
+      htmlStr = `<h3>Drink Category:${drink.drinks[0].strCategory}</h3> <h4>Glass Type:${drink.drinks[0].strGlass}<h4>`
+      categoryEl.innerHTML = htmlStr;
+
+    drinks.append(categoryEl);
+
 
 getCocktail();
 
@@ -44,7 +58,6 @@ function getJokes(joke) {
   if (joke.joke) {
     // now jokeText = "something about something"
     jokeText = joke.joke
-    
     // here we set the html on the page to have the jokeText "something is something"
     jokes.textContent = jokeText; 
     console.log(joke);
@@ -75,7 +88,3 @@ function getJokes(joke) {
   });
 }
 
-randomjokes();
-// Variable for each piece of data
-// Create elements for
-// Append styles to .joke-content
