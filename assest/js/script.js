@@ -19,13 +19,15 @@ function displayCocktail(drink) {
   //set variables for each piece of the data you want
   // create some elements(ex. p tag)
   //append these elemtns to ct-content
+  var category3El = document.createElement("div");
+  htmlStr3 = `<h3><strong>Try this Drink: ${drink.strDrink}</strong></h3>`;
+  category3El.innerHTML = htmlStr3;
+  
   var drinkImg = document.createElement("img");
   drinkImg.setAttribute("src", drink.strDrinkThumb);
 
-  drinks.textContent = "Try this drink: " + drink.strDrink;
-
   var categoryEl = document.createElement("div");
-  htmlStr = `<h3><strong>Drink Category:</strong>${drink.strCategory}</h3><h4><strong>Glass Type:</strong>${drink.strGlass}<h4>`;
+  htmlStr = `<h4><strong>Drink Category:</strong>${drink.strCategory}</h4><h4><strong>Glass Type:</strong>${drink.strGlass}<h4>`;
   categoryEl.innerHTML = htmlStr;
 
   var ingredientsList = document.createElement("ul");
@@ -41,9 +43,10 @@ function displayCocktail(drink) {
   }
 
   var category2El = document.createElement("div");
-  htmlStr2 = `<p>Instructions: ${drink.strInstructions}</p>`;
+  htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
   category2El.innerHTML = htmlStr2;
 
+  drinks.append(category3El);
   drinks.append(drinkImg);
   drinks.append(categoryEl);
   drinks.append(ingredientsList);
