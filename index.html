@@ -8,15 +8,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
     />
+    
     <link rel="stylesheet" href="assest\style\style.css" />
   </head>
   <body>
-    <section class="section block">
+    <section class="section block" id="header-title">
       <div class="container">
-        <h1 class="title">Life of the party</h1>
+        <h1 class="title"><i class="fas fa-cocktail"></i> Life of the Party <i class="fas fa-cocktail"></i></h1>
         <p class="subtitle">
-          Click on the buttons to get a random drink cocktail and a random dad
-          joke
+          Bring your A game, don't show up to the party empty-handed!
         </p>
       </div>
     </section>
@@ -24,13 +24,15 @@
       <div class="columns">
         <div class="column is-half">
           <div class="tile is-parent">
-            <article class="tile is-child notification is-danger">
+            <article class="tile is-child notification" id="joke-box">
               <div class="columns">
                 <div class="column is-half">
-                  <button class="dad-button button" id="save-joke">Save Button</button>
+                  <button class="joke-button button" id="save-joke">Save Joke</button>
                 </div>
                 <div class="column is-half">
-                  <p class="title">Jokes</p>
+
+                  <p class="joke-title">Joke</p>
+
                 </div>
               </div>
 
@@ -43,19 +45,21 @@
           </div>
           <div class="tile is-parent">
             <article class="tile is-child notification is-white">
-              <button class="button is-fullwidth" id="new-joke">New Joke</button>
+
+              <button class="button random-button is-fullwidth" id="new-joke">Generate Random Joke</button>
+
             </article>
           </div>
         </div>
 
         <div class="column is-half">
           <div class="tile is-parent">
-            <article class="tile is-child notification is-danger">
+            <article class="tile is-child notification" id="cocktail-box">
               <div class="columns">
                 <div class="column is-half">
-                  <button class="ct-button button" id="save-drink">Save Button</button>
+                  <button class="ct-button button" id="save-drink">Save Drink</button>
                 </div>
-                <div class="column is-half">
+                <div class="column is-half cocktail-title">
                   <p class="title">Cocktails</p>
                 </div>
               </div>
@@ -65,20 +69,20 @@
           </div>
           <div class="tile is-parent">
             <article class="tile is-child notification is-white">
-              <button class="button is-fullwidth" id="new-drink">New Drink</button>
+              <button class="button is-fullwidth" id="new-drink">Generate Random Drink</button>
             </article>
           </div>
         </div>
         
         </div>
         <div class="save-box">
-          <h2>These are your favorite</h2>
+          <h2>Saved Jokes & Drinks</h2>
           <p class = "saved-jokes"></p>
         </br>
           <p class = "save-cocktails"></p>
       </div>
     </div>
-
+    <script src="https://kit.fontawesome.com/26ba5fbb89.js" crossorigin="anonymous"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

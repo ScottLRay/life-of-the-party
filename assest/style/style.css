@@ -1,6 +1,54 @@
 .title{
     text-align: center;
+    font-size: 350%;
+    color: white;
 }
 .subtitle{
     text-align: center;
+    color: white;
+}
+
+.joke-title {
+    color: white;
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.cocktail-title {
+    color: white;
+    font-size: 75%;
+    font-weight: bold;
+}
+
+#header-title {
+    background-color: #39566B;
+}
+
+#joke-box {
+    background-color: #6194B8;
+}
+
+#cocktail-box {
+    background-color: #6194B8;
+}
+
+.ct-content {
+    color: white;
+}
+
+.ct-content h3 {
+    text-align: center;
+    font-size: 150%;
+}
+
+.ct-content h4 {
+    text-align: center;
+}
+
+li {
+    text-align: center;
+}
+
+.joke-content {
+    color: white;
 }

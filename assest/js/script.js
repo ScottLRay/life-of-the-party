@@ -15,14 +15,14 @@ function getCocktail() {
 }
 
 function displayCocktail(drink) {
-     console.log(drink);
+    console.log(drink);
 
-     var saveDrink = document.querySelector("#save-drink");
-     saveDrink.addEventListener("click", (e) => {
-         e.preventDefault()
+    var saveDrink = document.querySelector("#save-drink");
+    saveDrink.addEventListener("click", (e) => {
+        e.preventDefault()
         localStorage.setItem("drink", JSON.stringify(drink))
-     }
-     )
+    }
+    )
 
     var drinks = document.querySelector(".ct-content");
     //set variables for each piece of the data you want
@@ -76,8 +76,8 @@ function getJoke(data) {
     }
 
     var saveJoke = document.querySelector("#save-joke");
-     saveJoke.addEventListener("click", (e) => {
-         e.preventDefault()
+    saveJoke.addEventListener("click", (e) => {
+        e.preventDefault()
         localStorage.setItem("joke", JSON.stringify(data))
     }
     )
