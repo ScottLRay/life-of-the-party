@@ -30,10 +30,13 @@ so that i can have a good time laughing and drinking
 ![the wireframe for the project](https://github.com/ScottLRay/life-of-the-party/blob/main/assest/img/Cocktail%20Gen.jpg)
 
 
+## Github deployed link
+https://scottlray.github.io/life-of-the-party/
+
 
 ## Apis being used
-## dad jokes database
-https://icanhazdadjoke.com/api
+## jokes database
+https://v2.jokeapi.dev/
 
 ## cocktails database
 https://www.thecocktaildb.com/api.php
