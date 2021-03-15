@@ -23,38 +23,56 @@ function displayCocktail(drink) {
   //append these elemtns to ct-content
   var drinkImg = document.createElement("img");
 
+  // drink image
   drinkImg.setAttribute("src", drink.strDrinkThumb);
 
+  
+
+  // THIS NEEDS TO BE CHANGED TO TEMPLATE LITERAL (BELOW-LINE 33-35) BUT IS LINKED TO ANOTHER LINE --HELP?
   drinks.textContent = "Try this drink: " + drink.strDrink;
 
+  // var category3El = document.querySelector("div");
+  // htmlStr3 = <h3>Try this drink: ${drink.strDrink}</h3>;
+  // category3El = htmlStr3;
+
+  // create html div for drink recipe
   var categoryEl = document.createElement("div");
 
-  htmlStr = `<h3><strong>Drink Category: </strong>${drink.strCategory}</h3><h4><strong>Glass Type: </strong>${drink.strGlass}<h4>`;
+  // html text for drink category & glass type
+  htmlStr = `<h4><strong>Drink Category: </strong>${drink.strCategory}</h4><h4><strong>Glass Type: </strong>${drink.strGlass}<h4>`;
   categoryEl.innerHTML = htmlStr;
 
+  // html for drink measurements & ingredients
   var ingredientsList = document.createElement("ul");
 
+  // for loop for setting up going through listed measurements and ingredients
   for (let i = 1; i < 16; i++) {
 
+    // variables for measurement & ingredient
     var ingredient = "strIngredient" + i;
     var measure = "strMeasure" + i;
 
+    // if there is a string in the measurement & ingredients,
     if (drink[ingredient]) {
 
+      // then create list measurement + ingredient
       var li = document.createElement("li");
       li.textContent = drink[measure] + ": " + drink[ingredient];
       ingredientsList.append(li);
     }
   }
+  // html for instructions
   var category2El = document.createElement("div");
-  htmlStr2 = `<p>Instructions: ${drink.strInstructions}</p>`;
-
+  htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
   category2El.innerHTML = htmlStr2;
+
   drinks.append(drinkImg);
   drinks.append(categoryEl);
   drinks.append(ingredientsList);
   drinks.append(category2El);
+  drinks.append(category3El);
 
+  // need to change this out, it's throwing off the name that needs to go into template literal
   currentDrink = drink.strDrink;
 }
 var newDrink = document.querySelector("#new-drink");
