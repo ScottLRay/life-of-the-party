@@ -103,16 +103,6 @@ function buildDrinkCard(drink) {
   return drinkContainer;
 }
 
-
-  drinks.append(category3El);
-  drinks.append(drinkImg);
-  drinks.append(categoryEl);
-  drinks.append(ingredientsList);
-  drinks.append(category2El);
-
-  // need to change this out, it's throwing off the name that needs to go into template literal
-//   currentDrink = drink.strDrink;
-}
 var displayDrinkFromOurLocalStorage = function displayCocktail(drink) {
     console.log(drink);
   
