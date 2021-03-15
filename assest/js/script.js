@@ -93,25 +93,7 @@ function buildDrinkCard(drink) {
   htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
   category2El.innerHTML = htmlStr2;
 
-  drinkContainer.append(
-    category3El,
-    drinkImg,
-    categoryEl,
-    ingredientsList,
-    category2El
-  );
-  return drinkContainer;
-}
-
-
-  drinks.append(category3El);
-  drinks.append(drinkImg);
-  drinks.append(categoryEl);
-  drinks.append(ingredientsList);
-  drinks.append(category2El);
-
-  // need to change this out, it's throwing off the name that needs to go into template literal
-//   currentDrink = drink.strDrink;
+  
 }
 var displayDrinkFromOurLocalStorage = function displayCocktail(drink) {
     console.log(drink);
@@ -170,7 +152,7 @@ var displayDrinkFromOurLocalStorage = function displayCocktail(drink) {
     
   
     // need to change this out, it's throwing off the name that needs to go into template literal
-  //   currentDrink = drink.strDrink;
+    //   currentDrink = drink.strDrink;
 }
 
 var newDrink = document.querySelector("#new-drink");
