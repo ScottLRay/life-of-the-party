@@ -26,9 +26,6 @@ function displayCocktail(drink) {
   // drink image
   drinkImg.setAttribute("src", drink.strDrinkThumb);
 
-  
-
-  // THIS NEEDS TO BE CHANGED TO TEMPLATE LITERAL (BELOW-LINE 33-35) BUT IS LINKED TO ANOTHER LINE --HELP?
   drinks.textContent = "Try this drink: " + drink.strDrink;
 
   var category3El = document.querySelector("div");

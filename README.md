@@ -33,7 +33,9 @@ so that i can have a good time laughing and drinking
 
 ## Screen shot 
 
-![screenshot of the landing page]()
+![screenshot of the landing page](https://github.com/ScottLRay/life-of-the-party/blob/main/assest/img/life-of-the-party-screenshot.png)
+
+
 
 ## Github deployed link
 https://scottlray.github.io/life-of-the-party/
