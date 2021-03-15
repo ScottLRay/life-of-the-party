@@ -16,6 +16,10 @@
     background-color: #39566B;
 }
 
+#container-block {
+    background-image: url("assest/img/brick.jpg");
+}
+
 /* joke title text */
 .joke-title {
     color: white;

@@ -26,11 +26,9 @@ function displayCocktail(drink) {
   // drink image
   drinkImg.setAttribute("src", drink.strDrinkThumb);
 
-  drinks.textContent = "Try this drink: " + drink.strDrink;
-
-  var category3El = document.querySelector("div");
-  htmlStr3 = `<h3>Try this drink: ${drink.strDrink}</h3>`;
-  category3El = htmlStr3;
+   var category3El = document.createElement("div");
+  htmlStr3 = `<h3><strong>Try this drink:</strong> ${drink.strDrink}</h3>`;
+  category3El.innerHTML = htmlStr3;
 
   // create html div for drink recipe
   var categoryEl = document.createElement("div");
