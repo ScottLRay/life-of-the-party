@@ -42,6 +42,7 @@ function getCocktail() {
 }
 function displayCocktail(drink) {
   var drinks = document.querySelector(".ct-content");
+  drinks.innerHTML = ""
   //set variables for each piece of the data you want
   drinks.append(buildDrinkCard(drink));
   // need to change this out, it's throwing off the name that needs to go into template literal
@@ -50,14 +51,23 @@ function displayCocktail(drink) {
 function buildDrinkCard(drink) {
   // create some elements(ex. p tag)
   //append these elemtns to ct-content
+
   var drinkContainer = document.createElement("div");
   drinkContainer.classList.add("drink-card");
-  var drinkImg = document.createElement("img");
-  // drink image
-  drinkImg.setAttribute("src", drink.strDrinkThumb);
+
   var category3El = document.createElement("div");
   htmlStr3 = `<h3><strong>Try this drink:</strong> ${drink.strDrink}</h3>`;
   category3El.innerHTML = htmlStr3;
+
+
+  var drinkImg = document.createElement("img");
+  // drink image
+  drinkImg.setAttribute("src", drink.strDrinkThumb);
+
+  var category3El = document.createElement("div");
+  htmlStr3 = `<h3><strong>Try this drink:</strong> ${drink.strDrink}</h3>`;
+  category3El.innerHTML = htmlStr3;
+
   // create html div for drink recipe
   var categoryEl = document.createElement("div");
   // html text for drink category & glass type
@@ -82,6 +92,7 @@ function buildDrinkCard(drink) {
   var category2El = document.createElement("div");
   htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
   category2El.innerHTML = htmlStr2;
+
   drinkContainer.append(
     category3El,
     drinkImg,
@@ -91,6 +102,96 @@ function buildDrinkCard(drink) {
   );
   return drinkContainer;
 }
+
+
+  drinks.append(category3El);
+  drinks.append(drinkImg);
+  drinks.append(categoryEl);
+  drinks.append(ingredientsList);
+  drinks.append(category2El);
+
+  // need to change this out, it's throwing off the name that needs to go into template literal
+//   currentDrink = drink.strDrink;
+}
+var displayDrinkFromOurLocalStorage = function displayCocktail(drink) {
+    console.log(drink);
+  
+    var drinks = document.querySelector(".ct-content");
+    //set variables for each piece of the data you want
+    // create some elements(ex. p tag)
+    //append these elemtns to ct-content
+    var drinkImg = document.createElement("img");
+  
+    // drink image
+    drinkImg.setAttribute("src", drink.strDrinkThumb);
+  
+    drinks.textContent = "Try this drink: " + drink.strDrink;
+  
+    var category3El = document.querySelector("div");
+    htmlStr3 = `<h3>Try this drink: ${drink.strDrink}</h3>`;
+    category3El = htmlStr3;
+  
+    // create html div for drink recipe
+    var categoryEl = document.createElement("div");
+  
+    // html text for drink category & glass type
+    htmlStr = `<h4><strong>Drink Category: </strong>${drink.strCategory}</h4><h4><strong>Glass Type: </strong>${drink.strGlass}<h4>`;
+    categoryEl.innerHTML = htmlStr;
+  
+    // html for drink measurements & ingredients
+    var ingredientsList = document.createElement("ul");
+  
+    // for loop for setting up going through listed measurements and ingredients
+    for (let i = 1; i < 16; i++) {
+  
+      // variables for measurement & ingredient
+      var ingredient = "strIngredient" + i;
+      var measure = "strMeasure" + i;
+  
+      // if there is a string in the measurement & ingredients,
+      if (drink[ingredient]) {
+  
+        // then create list measurement + ingredient
+        var li = document.createElement("li");
+        li.textContent = drink[measure] + ": " + drink[ingredient];
+        ingredientsList.append(li);
+      }
+    }
+    // html for instructions
+    var category2El = document.createElement("div");
+    htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
+    category2El.innerHTML = htmlStr2;
+  
+    drinks.append(category3El);
+    drinks.append(drinkImg);
+    drinks.append(categoryEl);
+    drinks.append(ingredientsList);
+    drinks.append(category2El);
+    
+  
+    // need to change this out, it's throwing off the name that needs to go into template literal
+  //   currentDrink = drink.strDrink;
+}
+
+var newDrink = document.querySelector("#new-drink");
+newDrink.addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  getCocktail();
+});
+
+var saveDrink = document.querySelector("#save-drink");
+saveDrink.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  endUserSave.push(currentDrink);
+  localStorage.setItem("drink", JSON.stringify(endUserSave));
+  renderFavoritesDrink();
+});
+
+var endUserSave = getSaveDrinks();
+
+
 function getSaveDrinks() {
   var endUserSaveData = localStorage.getItem("drink");
   if (endUserSaveData) {
