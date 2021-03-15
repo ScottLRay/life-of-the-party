@@ -30,6 +30,11 @@ so that i can have a good time laughing and drinking
 ![the wireframe for the project](https://github.com/ScottLRay/life-of-the-party/blob/main/assest/img/Cocktail%20Gen.jpg)
 
 
+
+## Screen shot 
+
+![screenshot of the landing page]()
+
 ## Github deployed link
 https://scottlray.github.io/life-of-the-party/
 
