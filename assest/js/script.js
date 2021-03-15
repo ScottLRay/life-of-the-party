@@ -18,17 +18,18 @@ function displayCocktail(drink) {
   console.log(drink);
 
   var drinks = document.querySelector(".ct-content");
+  drinks.innerHTML = ""
   //set variables for each piece of the data you want
   // create some elements(ex. p tag)
   //append these elemtns to ct-content
+  var category3El = document.createElement("div");
+  htmlStr3 = `<h3><strong>Try this drink:</strong> ${drink.strDrink}</h3>`;
+  category3El.innerHTML = htmlStr3;
+
   var drinkImg = document.createElement("img");
 
   // drink image
   drinkImg.setAttribute("src", drink.strDrinkThumb);
-
-   var category3El = document.createElement("div");
-  htmlStr3 = `<h3><strong>Try this drink:</strong> ${drink.strDrink}</h3>`;
-  category3El.innerHTML = htmlStr3;
 
   // create html div for drink recipe
   var categoryEl = document.createElement("div");
@@ -42,14 +43,12 @@ function displayCocktail(drink) {
 
   // for loop for setting up going through listed measurements and ingredients
   for (let i = 1; i < 16; i++) {
-
     // variables for measurement & ingredient
     var ingredient = "strIngredient" + i;
     var measure = "strMeasure" + i;
 
     // if there is a string in the measurement & ingredients,
     if (drink[ingredient]) {
-
       // then create list measurement + ingredient
       var li = document.createElement("li");
       li.textContent = drink[measure] + ": " + drink[ingredient];
@@ -66,7 +65,6 @@ function displayCocktail(drink) {
   drinks.append(categoryEl);
   drinks.append(ingredientsList);
   drinks.append(category2El);
-  
 
   // need to change this out, it's throwing off the name that needs to go into template literal
   currentDrink = drink.strDrink;
@@ -74,6 +72,7 @@ function displayCocktail(drink) {
 var newDrink = document.querySelector("#new-drink");
 newDrink.addEventListener("click", function (e) {
   e.preventDefault();
+  
   getCocktail();
 });
 
