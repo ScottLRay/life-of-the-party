@@ -31,9 +31,9 @@ function displayCocktail(drink) {
   // THIS NEEDS TO BE CHANGED TO TEMPLATE LITERAL (BELOW-LINE 33-35) BUT IS LINKED TO ANOTHER LINE --HELP?
   drinks.textContent = "Try this drink: " + drink.strDrink;
 
-  // var category3El = document.querySelector("div");
-  // htmlStr3 = <h3>Try this drink: ${drink.strDrink}</h3>;
-  // category3El = htmlStr3;
+  var category3El = document.querySelector("div");
+  htmlStr3 = `<h3>Try this drink: ${drink.strDrink}</h3>`;
+  category3El = htmlStr3;
 
   // create html div for drink recipe
   var categoryEl = document.createElement("div");
@@ -66,11 +66,12 @@ function displayCocktail(drink) {
   htmlStr2 = `<h4>Instructions: ${drink.strInstructions}</h4>`;
   category2El.innerHTML = htmlStr2;
 
+  drinks.append(category3El);
   drinks.append(drinkImg);
   drinks.append(categoryEl);
   drinks.append(ingredientsList);
   drinks.append(category2El);
-  drinks.append(category3El);
+  
 
   // need to change this out, it's throwing off the name that needs to go into template literal
   currentDrink = drink.strDrink;
